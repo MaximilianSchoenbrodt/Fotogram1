@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilderchronik</title>
+
+  <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <img src="./icons/Fotogram_Logo.svg" alt="Logo der Bilderchronik" class="logo-img">
+  </header>
+
+  <main class="site-content">
+    <h1 class="main-title">Fotogalerie</h1>
+
+    <section class="gallery-section">
+      <div id="picGrid" class="thumbnail-grid"></div>
+    </section>
+
+    <dialog id="imgViewer" class="image-viewer">
+      <button class="ctrl-btn viewer-close" aria-label="Schließen">×</button>
+      <button class="ctrl-btn viewer-prev" aria-label="Zurück">←</button>
+      <button class="ctrl-btn viewer-next" aria-label="Weiter">→</button>
+
+      <figure class="viewer-content">
+        <img id="viewerImg" src="" alt="Großansicht">
+        <figcaption id="viewerText" class="viewer-caption"></figcaption>
+      </figure>
+    </dialog>
+
+  </main>
+
+  <footer class="site-footer">
+    <img src="./icons/favicon.png" alt="Seiten-Symbol" class="footer-icon">
+    <p>&copy; 2026 Maximilian Schönbrodt</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
