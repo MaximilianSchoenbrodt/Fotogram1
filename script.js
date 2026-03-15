@@ -1,4 +1,3 @@
-
 const images = [
   "./img/img1.jpg",
   "./img/img2.jpg",
@@ -9,7 +8,7 @@ const images = [
   "./img/img7.jpg",
   "./img/img8.jpg",
   "./img/img9.jpg",
-  "./img/img10.jpg"
+  "./img/img10.jpg",
 ];
 
 const labels = [
@@ -22,7 +21,7 @@ const labels = [
   "Pflanze",
   "Meer & Mond",
   "Zitronen",
-  "Katzen"
+  "Katzen",
 ];
 
 const grid = document.getElementById("picGrid");

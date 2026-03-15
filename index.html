@@ -1,45 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bilderchronik</title>
- 
-  <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bilderchronik</title>
 
-<body>
+    <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-  <header class="site-header">
-    <img src="./icons/Fotogram_logo.svg" alt="Fotogram logo with colorful overlapping abstract shapes in pink, orange, blue, purple, green, and yellow, set against a white background. The logo includes the word Fotogram in bold white letters, conveying a creative and vibrant mood." class="logo-img">
-  </header>
+  <body>
+    <header class="site-header">
+      <img
+        src="./icons/Fotogram_logo.svg"
+        alt="Fotogram logo with colorful overlapping abstract shapes in pink, orange, blue, purple, green, and yellow, set against a white background. The logo includes the word Fotogram in bold white letters, conveying a creative and vibrant mood."
+        class="logo-img"
+      />
+    </header>
 
-  <main class="site-content">
-    <h1 class="main-title">Fotogalerie</h1>
+    <main class="site-content">
+      <h1 class="main-title">Fotogalerie</h1>
 
-    <section class="gallery-section">
-      <div id="picGrid" class="thumbnail-grid"></div>
-    </section>
+      <section class="gallery-section">
+        <div id="picGrid" class="thumbnail-grid"></div>
+      </section>
 
-    <dialog id="imgViewer" class="image-viewer">
-      <button class="ctrl-btn viewer-close" aria-label="Schließen">×</button>
-      <button class="ctrl-btn viewer-prev" aria-label="Zurück">←</button>
-      <button class="ctrl-btn viewer-next" aria-label="Weiter">→</button>
+      <dialog id="imgViewer" class="image-viewer">
+        <button class="ctrl-btn viewer-close" aria-label="Schließen">×</button>
+        <button class="ctrl-btn viewer-prev" aria-label="Zurück">←</button>
+        <button class="ctrl-btn viewer-next" aria-label="Weiter">→</button>
 
-      <figure class="viewer-content">
-        <img id="viewerImg" src="" alt="Großansicht">
-        <figcaption id="viewerText" class="viewer-caption"></figcaption>
-      </figure>
-    </dialog>
+        <figure class="viewer-content">
+          <img id="viewerImg" src="" alt="Großansicht" />
+          <figcaption id="viewerText" class="viewer-caption"></figcaption>
+        </figure>
+      </dialog>
+    </main>
 
-  </main>
+    <footer class="site-footer">
+      <img src="./icons/favicon.png" alt="Seiten-Symbol" class="footer-icon" />
+      <p>&copy; 2026 Maximilian Schönbrodt</p>
+    </footer>
 
-  <footer class="site-footer">
-    <img src="./icons/favicon.png" alt="Seiten-Symbol" class="footer-icon">
-    <p>&copy; 2026 Maximilian Schönbrodt</p>
-  </footer>
-
-  <script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
