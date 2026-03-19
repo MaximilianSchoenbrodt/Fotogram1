@@ -4,23 +4,17 @@
   --color-accent: #4da8ff;
   --color-text: #eef6ff;
   --color-muted: #b7c3d1;
-
   --radius-base: 10px;
   --radius-round: 50%;
-
   --space-xs: 4px;
   --space-s: 12px;
   --space-m: 20px;
   --space-l: 32px;
-
   --thumb-w: 240px;
   --thumb-h: 200px;
-
   --dialog-btn: 56px;
-
   --font-title: 52px;
   --font-base: 19px;
-
   --content-max: 1400px;
 }
 
@@ -89,7 +83,7 @@ img {
   flex-wrap: wrap;
   gap: var(--space-l);
   justify-content: center;
-  margin-bottom: 80px; 
+  margin-bottom: 80px;
 }
 
 .thumb-item {
@@ -116,11 +110,12 @@ img {
 }
 
 .image-viewer::backdrop {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(3px);
 }
 
 .viewer-content {
+  position: relative;
   background: var(--color-surface);
   padding: var(--space-m);
   border-radius: var(--radius-base);
@@ -129,6 +124,7 @@ img {
   margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-s);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 }
@@ -147,14 +143,14 @@ img {
 }
 
 .ctrl-btn {
-  position: fixed;
-  width: var(--dialog-btn);
-  height: var(--dialog-btn);
+  position: absolute;
+  width: 44px;
+  height: 44px;
   border: none;
   border-radius: var(--radius-round);
   background: rgba(0, 0, 0, 0.55);
   color: var(--color-accent);
-  font-size: 26px;
+  font-size: 22px;
   cursor: pointer;
   transition: 0.25s ease;
 }
@@ -165,19 +161,19 @@ img {
 }
 
 .viewer-close {
-  top: 20px;
-  right: 25px;
+  top: 10px;
+  right: 10px;
 }
 
 .viewer-prev {
   top: 50%;
-  left: 25px;
+  left: 10px;
   transform: translateY(-50%);
 }
 
 .viewer-next {
   top: 50%;
-  right: 25px;
+  right: 10px;
   transform: translateY(-50%);
 }
 
@@ -212,9 +208,9 @@ img {
   }
 
   .ctrl-btn {
-    width: 44px;
-    height: 44px;
-    font-size: 22px;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
   }
 
   #viewerImg {
@@ -243,22 +239,22 @@ img {
   }
 
   .ctrl-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
   }
 
   .viewer-prev {
-    left: 10px;
+    left: 6px;
   }
 
   .viewer-next {
-    right: 10px;
+    right: 6px;
   }
 
   .viewer-close {
-    right: 10px;
-    top: 10px;
+    right: 6px;
+    top: 6px;
   }
 
   .footer-icon {
@@ -296,9 +292,9 @@ img {
   }
 
   .ctrl-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
   }
 
   .footer-content {

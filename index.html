@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bilderchronik</title>
-
+    <link rel="icon" href="./icons/favicon.ico" sizes="any" />
     <link rel="icon" href="./icons/Fotogram_logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <link rel="stylesheet" href="./style.css" />
   </head>
 
@@ -28,11 +29,10 @@
       </section>
 
       <dialog id="imgViewer" class="image-viewer">
-        <button class="ctrl-btn viewer-close" aria-label="Schließen" onclick="closeViewer()">×</button>
-        <button class="ctrl-btn viewer-prev" aria-label="Zurück" onclick="prevImage()">←</button>
-        <button class="ctrl-btn viewer-next" aria-label="Weiter" onclick="nextImage()">→</button>
-
         <figure class="viewer-content">
+          <button class="ctrl-btn viewer-close" aria-label="Schließen" onclick="closeViewer()">×</button>
+          <button class="ctrl-btn viewer-prev" aria-label="Zurück" onclick="prevImage()">←</button>
+          <button class="ctrl-btn viewer-next" aria-label="Weiter" onclick="nextImage()">→</button>
           <img id="viewerImg" src="" alt="Großansicht" />
           <figcaption id="viewerText" class="viewer-caption"></figcaption>
         </figure>
