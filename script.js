@@ -1,84 +1,117 @@
-const images = [
-  "./img/img1.jpg",
-  "./img/img2.jpg",
-  "./img/img3.jpg",
-  "./img/img4.jpg",
-  "./img/img5.jpg",
-  "./img/img6.jpg",
-  "./img/img7.jpg",
-  "./img/img8.jpg",
-  "./img/img9.jpg",
-  "./img/img10.jpg",
+let images = [
+    "./img/img1.jpg",
+    "./img/img2.jpg",
+    "./img/img3.jpg",
+    "./img/img4.jpg",
+    "./img/img5.jpg",
+    "./img/img6.jpg",
+    "./img/img7.jpg",
+    "./img/img8.jpg",
+    "./img/img9.jpg",
+    "./img/img10.jpg",
 ];
 
-const labels = [
-  "Surferin",
-  "Schuhe",
-  "Ungeheuer",
-  "blauer Planet",
-  "Haus",
-  "Frau in schwarz/weis",
-  "Pflanze",
-  "Meer & Mond",
-  "Zitronen",
-  "Katzen",
+let labels = [
+    "Surferin",
+    "Schuhe",
+    "Ungeheuer",
+    "blauer Planet",
+    "Haus",
+    "Frau in schwarz/weis",
+    "Pflanze",
+    "Meer & Mond",
+    "Zitronen",
+    "Katzen",
 ];
 
-const grid = document.getElementById("picGrid");
-const viewer = document.getElementById("imgViewer");
-const viewerImg = document.getElementById("viewerImg");
-const viewerText = document.getElementById("viewerText");
+let currentIndex = 0;
 
-let current = 0;
+function init() {
+    let gridRef = document.getElementById("picGrid");
+    for (let i = 0; i < images.length; i++) {
+        gridRef.innerHTML += renderThumbnail(i);
+    }
+}
 
-function buildGallery() {
-  for (let i = 0; i < images.length; i++) {
-    const figure = document.createElement("figure");
-    figure.classList.add("thumb-item");
+function renderThumbnail(index) {
+    return `
+        <figure class="thumb-item">
+            <img 
+                class="thumb-img" 
+                src="${images[index]}" 
+                alt="${labels[index]}" 
+                tabindex="0"
+                onclick="openViewer(${index})"
+                onkeydown="openOnEnter(event, ${index})">
+        </figure>
+    `;
+}
 
-    const img = document.createElement("img");
-    img.src = images[i];
-    img.alt = labels[i];
-    img.classList.add("thumb-img");
-
-    img.addEventListener("click", () => openViewer(i));
-
-    figure.appendChild(img);
-    grid.appendChild(figure);
-  }
+function openOnEnter(event, index) {
+    if (event.key === "Enter") {
+        openViewer(index);
+    }
 }
 
 function openViewer(index) {
-  current = index;
-  viewerImg.src = images[current];
-  viewerText.textContent = labels[current];
-  viewer.showModal();
+    currentIndex = index;
+    updateViewerContent();
+    let viewer = document.getElementById("imgViewer");
+    viewer.showModal();
+}
+
+function updateViewerContent() {
+    let viewerImg = document.getElementById("viewerImg");
+    let viewerText = document.getElementById("viewerText");
+
+    viewerImg.src = images[currentIndex];
+    viewerImg.alt = labels[currentIndex];
+    viewerText.textContent = labels[currentIndex] + " (" + (currentIndex + 1) + "/" + images.length + ")";
 }
 
 function closeViewer() {
-  viewer.close();
+    let viewer = document.getElementById("imgViewer");
+    viewer.close();
 }
 
 function nextImage() {
-  current++;
-  if (current >= images.length) current = 0;
-  viewerImg.src = images[current];
-  viewerText.textContent = labels[current];
+    currentIndex++;
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+    updateViewerContent();
 }
 
 function prevImage() {
-  current--;
-  if (current < 0) current = images.length - 1;
-  viewerImg.src = images[current];
-  viewerText.textContent = labels[current];
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+    }
+    updateViewerContent();
 }
 
-viewer.addEventListener("click", (e) => {
-  if (e.target === viewer) closeViewer();
-});
+function handleKeydown(event) {
+    let viewer = document.getElementById("imgViewer");
+    if (!viewer.open) {
+        return;
+    }
 
-document.querySelector(".viewer-next").addEventListener("click", nextImage);
-document.querySelector(".viewer-prev").addEventListener("click", prevImage);
-document.querySelector(".viewer-close").addEventListener("click", closeViewer);
+    if (event.key === "ArrowRight") {
+        nextImage();
+    }
+    if (event.key === "ArrowLeft") {
+        prevImage();
+    }
+    if (event.key === "Escape") {
+        closeViewer();
+    }
+}
 
-buildGallery();
+window.onclick = function(event) {
+    let viewer = document.getElementById("imgViewer");
+    if (event.target === viewer) {
+        closeViewer();
+    }
+}
+
+document.onkeydown = handleKeydown;

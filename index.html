@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bilderchronik</title>
 
-    <link rel="icon" href="/Fotogram1/icons/Fotogram_logo.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/Fotogram1/style.css" />
+    <link rel="icon" href="./icons/Fotogram_logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
-  <body>
+  <body onload="init()">
     <header class="site-header">
-      <img
-        src="/Fotogram1/icons/Fotogram_Logo.svg"
-        alt="Fotogram logo with colorful overlapping abstract shapes in pink, orange, blue, purple, green, and yellow, set against a white background. The logo includes the word Fotogram in bold white letters."
-        class="logo-img"
-      />
+      <div class="header-content">
+        <img
+          src="./icons/Fotogram_Logo.svg"
+          alt="Fotogram logo"
+          class="logo-img"
+        />
+      </div>
     </header>
 
     <main class="site-content">
@@ -26,9 +28,9 @@
       </section>
 
       <dialog id="imgViewer" class="image-viewer">
-        <button class="ctrl-btn viewer-close" aria-label="Schließen">×</button>
-        <button class="ctrl-btn viewer-prev" aria-label="Zurück">←</button>
-        <button class="ctrl-btn viewer-next" aria-label="Weiter">→</button>
+        <button class="ctrl-btn viewer-close" aria-label="Schließen" onclick="closeViewer()">×</button>
+        <button class="ctrl-btn viewer-prev" aria-label="Zurück" onclick="prevImage()">←</button>
+        <button class="ctrl-btn viewer-next" aria-label="Weiter" onclick="nextImage()">→</button>
 
         <figure class="viewer-content">
           <img id="viewerImg" src="" alt="Großansicht" />
@@ -38,10 +40,12 @@
     </main>
 
     <footer class="site-footer">
-      <img src="/Fotogram1/icons/favicon.png" alt="Seiten-Symbol" class="footer-icon" />
-      <p>&copy; 2026 Maximilian Schönbrodt</p>
+      <div class="footer-content">
+        <img src="./icons/favicon.png" alt="Seiten-Symbol" class="footer-icon" />
+        <p>&copy; 2026 Maximilian Schönbrodt</p>
+      </div>
     </footer>
 
-    <script src="/Fotogram1/script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
