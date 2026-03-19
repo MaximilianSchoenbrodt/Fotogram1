@@ -200,8 +200,6 @@ img {
   height: 45px;
 }
 
-/* Medienanpassungen unverändert */
-
 @media (max-width: 900px) {
   .logo-img {
     width: 180px;
