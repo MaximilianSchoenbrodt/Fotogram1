@@ -89,6 +89,7 @@ img {
   flex-wrap: wrap;
   gap: var(--space-l);
   justify-content: center;
+  margin-bottom: 80px; /* 👈 Abstand zum Footer ergänzt */
 }
 
 .thumb-item {
@@ -198,6 +199,8 @@ img {
 .footer-icon {
   height: 45px;
 }
+
+/* Medienanpassungen unverändert */
 
 @media (max-width: 900px) {
   .logo-img {
